@@ -4,8 +4,7 @@
 #Ung ho tien mua potato server: 000170109 MB Bank (THAN CONG BAO) - momo 0338128520 - paypal congtho6672@gmail.com
 
 #EXTINF:1,Ung ho Potato: 000170109 (MB Bank)
-#EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; WOW64) (byiptv247T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36"
-https://live-hls-abr-cdn.livepush.io/live/bigbuckbunnyclip/index.m3u8|Referer=https://livepush.io/
+https://d18dyiwu97wm6q.cloudfront.net/playlist.m3u8
 
 #EXTINF:1 group-title="Olympic S2-1" tvg-id="olympics21_olympicfeed1mw" tvg-logo="" provider="Olympic S2-1" provider-logo="" provider-type="iptv",OLYMPIC FEED 1 MW
 http://54.179.169.40:1234/stream/olympics21/olympicfeed1mw/master.m3u8?u=public&p=efa1f375d76194fa51a3556a97e641e61685f914d446979da50a551a4333ffd7
