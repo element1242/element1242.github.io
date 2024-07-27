@@ -39,6 +39,9 @@ http://54.169.84.120:1234/stream/olympics12/olympicfeed10mw/master.m3u8?u=public
 #EXTINF:6 group-title="Olympic S1-2" tvg-id="olympics12_olympicfeed11mw" tvg-logo="" provider="Olympic S1-2" provider-logo="" provider-type="iptv",OLYMPIC FEED 11 MW
 http://54.169.84.120:1234/stream/olympics12/olympicfeed11mw/master.m3u8?u=public&p=efa1f375d76194fa51a3556a97e641e61685f914d446979da50a551a4333ffd7
 
+#EXTINF:6 group-title="Olympic S2-2" tvg-id="olympics22_olympicfeed12mw" tvg-logo="" provider="Olympic S2-2" provider-logo="" provider-type="iptv",OLYMPIC FEED 12 MW
+http://54.179.169.40:1234/stream/olympics22/olympicfeed12mw/master.m3u8?u=public&p=efa1f375d76194fa51a3556a97e641e61685f914d446979da50a551a4333ffd7
+
 #EXTINF:6 group-title="Olympic S2-2" tvg-id="olympics22_olympicfeed13mw" tvg-logo="" provider="Olympic S2-2" provider-logo="" provider-type="iptv",OLYMPIC FEED 13 MW
 http://54.179.169.40:1234/stream/olympics22/olympicfeed13mw/master.m3u8?u=public&p=efa1f375d76194fa51a3556a97e641e61685f914d446979da50a551a4333ffd7
 
