@@ -1,7 +1,0 @@
-#EXTM3U
-#List cua Than Cong Bao, giai ma tu MeWatch CDN. Vui long ko mass ping/ddos, neu ko server se tu huy.!
-
-#EXTINF:1 group-title="Olympic" tvg-id="olympic_olympicfeed1mw" tvg-logo="" provider="Olympic" provider-logo="" provider-type="iptv",OLYMPIC FEED 1 MW
-http://54.179.169.40:1234/stream/olympic/olympicfeed1mw/master.m3u8?u=saohoa&p=6902ea3a9c264432e241813ada3368d1742ba686e556e74dd30565451eb5e74c
-#EXTINF:1 group-title="Olympic" tvg-id="olympic_olympicfeed2mw" tvg-logo="" provider="Olympic" provider-logo="" provider-type="iptv",OLYMPIC FEED 2 MW
-http://54.179.169.40:1234/stream/olympic/olympicfeed2mw/master.m3u8?u=saohoa&p=6902ea3a9c264432e241813ada3368d1742ba686e556e74dd30565451eb5e74c
