@@ -7,52 +7,40 @@
 https://d18dyiwu97wm6q.cloudfront.net/playlist.m3u8
 
 #EXTINF:1 group-title="Olympic S2-1" tvg-id="olympics21_olympicfeed1mw" tvg-logo="" provider="Olympic S2-1" provider-logo="" provider-type="iptv",OLYMPIC FEED 1 MW
-http://54.179.169.40:1234/stream/olympics21/olympicfeed1mw/master.m3u8?u=public&p=efa1f375d76194fa51a3556a97e641e61685f914d446979da50a551a4333ffd7
-
+http://vnes02.duckdns.org:1234/stream/olympics21/olympicfeed1mw/master.m3u8?u=public&p=efa1f375d76194fa51a3556a97e641e61685f914d446979da50a551a4333ffd7
 #EXTINF:2 group-title="Olympic S2-1" tvg-id="olympics21_olympicfeed2mw" tvg-logo="" provider="Olympic S2-1" provider-logo="" provider-type="iptv",OLYMPIC FEED 2 MW
-http://54.179.169.40:1234/stream/olympics21/olympicfeed2mw/master.m3u8?u=public&p=efa1f375d76194fa51a3556a97e641e61685f914d446979da50a551a4333ffd7
-
-#EXTINF:3 group-title="Olympic S2-1" tvg-id="olympics21_olympicfeed3mw" tvg-logo="" provider="Olympic S2-1" provider-logo="" provider-type="iptv",OLYMPIC FEED 3 MW
-http://54.179.169.40:1234/stream/olympics21/olympicfeed3mw/master.m3u8?u=public&p=efa1f375d76194fa51a3556a97e641e61685f914d446979da50a551a4333ffd7
-
-#EXTINF:1 group-title="Olympic S1-1" tvg-id="olympics11_olympicfeed4mw" tvg-logo="" provider="Olympic S1-1" provider-logo="" provider-type="iptv",OLYMPIC FEED 4 MW
-http://54.169.84.120:1234/stream/olympics11/olympicfeed4mw/master.m3u8?u=public&p=efa1f375d76194fa51a3556a97e641e61685f914d446979da50a551a4333ffd7
-
-#EXTINF:2 group-title="Olympic S1-1" tvg-id="olympics11_olympicfeed5mw" tvg-logo="" provider="Olympic S1-1" provider-logo="" provider-type="iptv",OLYMPIC FEED 5 MW
-http://54.169.84.120:1234/stream/olympics11/olympicfeed5mw/master.m3u8?u=public&p=efa1f375d76194fa51a3556a97e641e61685f914d446979da50a551a4333ffd7
-
+http://vnes02.duckdns.org:1234/stream/olympics21/olympicfeed2mw/master.m3u8?u=public&p=efa1f375d76194fa51a3556a97e641e61685f914d446979da50a551a4333ffd7
+#EXTINF:1 group-title="Olympic S1-1" tvg-id="olympics11_olympicfeed3mw" tvg-logo="" provider="Olympic S1-1" provider-logo="" provider-type="iptv",OLYMPIC FEED 3 MW
+http://vnes01.duckdns.org:1234/stream/olympics11/olympicfeed3mw/master.m3u8?u=public&p=efa1f375d76194fa51a3556a97e641e61685f914d446979da50a551a4333ffd7
+#EXTINF:2 group-title="Olympic S1-1" tvg-id="olympics11_olympicfeed4mw" tvg-logo="" provider="Olympic S1-1" provider-logo="" provider-type="iptv",OLYMPIC FEED 4 MW
+http://vnes01.duckdns.org:1234/stream/olympics11/olympicfeed4mw/master.m3u8?u=public&p=efa1f375d76194fa51a3556a97e641e61685f914d446979da50a551a4333ffd7
+#EXTINF:3 group-title="Olympic S2-1" tvg-id="olympics21_olympicfeed5mw" tvg-logo="" provider="Olympic S2-1" provider-logo="" provider-type="iptv",OLYMPIC FEED 5 MW
+http://vnes02.duckdns.org:1234/stream/olympics21/olympicfeed5mw/master.m3u8?u=public&p=efa1f375d76194fa51a3556a97e641e61685f914d446979da50a551a4333ffd7
 #EXTINF:4 group-title="Olympic S2-1" tvg-id="olympics21_olympicfeed6mw" tvg-logo="" provider="Olympic S2-1" provider-logo="" provider-type="iptv",OLYMPIC FEED 6 MW
-http://54.179.169.40:1234/stream/olympics21/olympicfeed6mw/master.m3u8?u=public&p=efa1f375d76194fa51a3556a97e641e61685f914d446979da50a551a4333ffd7
-
+http://vnes02.duckdns.org:1234/stream/olympics21/olympicfeed6mw/master.m3u8?u=public&p=efa1f375d76194fa51a3556a97e641e61685f914d446979da50a551a4333ffd7
 #EXTINF:3 group-title="Olympic S1-1" tvg-id="olympics11_olympicfeed7mw" tvg-logo="" provider="Olympic S1-1" provider-logo="" provider-type="iptv",OLYMPIC FEED 7 MW
-http://54.169.84.120:1234/stream/olympics11/olympicfeed7mw/master.m3u8?u=public&p=efa1f375d76194fa51a3556a97e641e61685f914d446979da50a551a4333ffd7
-
+http://vnes01.duckdns.org:1234/stream/olympics11/olympicfeed7mw/master.m3u8?u=public&p=efa1f375d76194fa51a3556a97e641e61685f914d446979da50a551a4333ffd7
 #EXTINF:4 group-title="Olympic S1-1" tvg-id="olympics11_olympicfeed8mw" tvg-logo="" provider="Olympic S1-1" provider-logo="" provider-type="iptv",OLYMPIC FEED 8 MW
-http://54.169.84.120:1234/stream/olympics11/olympicfeed8mw/master.m3u8?u=public&p=efa1f375d76194fa51a3556a97e641e61685f914d446979da50a551a4333ffd7
-
+http://vnes01.duckdns.org:1234/stream/olympics11/olympicfeed8mw/master.m3u8?u=public&p=efa1f375d76194fa51a3556a97e641e61685f914d446979da50a551a4333ffd7
 #EXTINF:5 group-title="Olympic S2-1" tvg-id="olympics21_olympicfeed9mw" tvg-logo="" provider="Olympic S2-1" provider-logo="" provider-type="iptv",OLYMPIC FEED 9 MW
-http://54.179.169.40:1234/stream/olympics21/olympicfeed9mw/master.m3u8?u=public&p=efa1f375d76194fa51a3556a97e641e61685f914d446979da50a551a4333ffd7
-
-#EXTINF:5 group-title="Olympic S1-2" tvg-id="olympics12_olympicfeed10mw" tvg-logo="" provider="Olympic S1-2" provider-logo="" provider-type="iptv",OLYMPIC FEED 10 MW
-http://54.169.84.120:1234/stream/olympics12/olympicfeed10mw/master.m3u8?u=public&p=efa1f375d76194fa51a3556a97e641e61685f914d446979da50a551a4333ffd7
-
-#EXTINF:6 group-title="Olympic S1-2" tvg-id="olympics12_olympicfeed11mw" tvg-logo="" provider="Olympic S1-2" provider-logo="" provider-type="iptv",OLYMPIC FEED 11 MW
-http://54.169.84.120:1234/stream/olympics12/olympicfeed11mw/master.m3u8?u=public&p=efa1f375d76194fa51a3556a97e641e61685f914d446979da50a551a4333ffd7
-
-#EXTINF:6 group-title="Olympic S2-2" tvg-id="olympics22_olympicfeed12mw" tvg-logo="" provider="Olympic S2-2" provider-logo="" provider-type="iptv",OLYMPIC FEED 12 MW
-http://54.179.169.40:1234/stream/olympics22/olympicfeed12mw/master.m3u8?u=public&p=efa1f375d76194fa51a3556a97e641e61685f914d446979da50a551a4333ffd7
-
-#EXTINF:6 group-title="Olympic S2-2" tvg-id="olympics22_olympicfeed13mw" tvg-logo="" provider="Olympic S2-2" provider-logo="" provider-type="iptv",OLYMPIC FEED 13 MW
-http://54.179.169.40:1234/stream/olympics22/olympicfeed13mw/master.m3u8?u=public&p=efa1f375d76194fa51a3556a97e641e61685f914d446979da50a551a4333ffd7
-
-#EXTINF:7 group-title="Olympic S2-2" tvg-id="olympics22_olympicfeed14mw" tvg-logo="" provider="Olympic S2-2" provider-logo="" provider-type="iptv",OLYMPIC FEED 14 MW
-http://54.179.169.40:1234/stream/olympics22/olympicfeed14mw/master.m3u8?u=public&p=efa1f375d76194fa51a3556a97e641e61685f914d446979da50a551a4333ffd7
-
-#EXTINF:8 group-title="Olympic S2-2" tvg-id="olympics22_olympicfeed15mw" tvg-logo="" provider="Olympic S2-2" provider-logo="" provider-type="iptv",OLYMPIC FEED 15 MW
-http://54.179.169.40:1234/stream/olympics22/olympicfeed15mw/master.m3u8?u=public&p=efa1f375d76194fa51a3556a97e641e61685f914d446979da50a551a4333ffd7
-
-#EXTINF:7 group-title="Olympic S1-2" tvg-id="olympics12_olympicfeed16mw" tvg-logo="" provider="Olympic S1-2" provider-logo="" provider-type="iptv",OLYMPIC FEED 16 MW
-http://54.169.84.120:1234/stream/olympics12/olympicfeed16mw/master.m3u8?u=public&p=efa1f375d76194fa51a3556a97e641e61685f914d446979da50a551a4333ffd7
-
-#EXTINF:9 group-title="Olympic S2-2" tvg-id="olympics22_olympicfeed17mw" tvg-logo="" provider="Olympic S2-2" provider-logo="" provider-type="iptv",OLYMPIC FEED 17 MW
-http://54.179.169.40:1234/stream/olympics22/olympicfeed17mw/master.m3u8?u=public&p=efa1f375d76194fa51a3556a97e641e61685f914d446979da50a551a4333ffd7
+http://vnes02.duckdns.org:1234/stream/olympics21/olympicfeed9mw/master.m3u8?u=public&p=efa1f375d76194fa51a3556a97e641e61685f914d446979da50a551a4333ffd7
+#EXTINF:6 group-title="Olympic S2-2" tvg-id="olympics22_olympicfeed10mw" tvg-logo="" provider="Olympic S2-2" provider-logo="" provider-type="iptv",OLYMPIC FEED 10 MW
+http://vnes02.duckdns.org:1234/stream/olympics22/olympicfeed10mw/master.m3u8?u=public&p=efa1f375d76194fa51a3556a97e641e61685f914d446979da50a551a4333ffd7
+#EXTINF:5 group-title="Olympic S1-2" tvg-id="olympics12_olympicfeed11mw" tvg-logo="" provider="Olympic S1-2" provider-logo="" provider-type="iptv",OLYMPIC FEED 11 MW 
+http://vnes01.duckdns.org:1234/stream/olympics12/olympicfeed11mw/master.m3u8?u=public&p=efa1f375d76194fa51a3556a97e641e61685f914d446979da50a551a4333ffd7
+#EXTINF:7 group-title="Olympic S2-2" tvg-id="olympics22_olympicfeed12mw" tvg-logo="" provider="Olympic S2-2" provider-logo="" provider-type="iptv",OLYMPIC FEED 12 MW
+http://vnes02.duckdns.org:1234/stream/olympics22/olympicfeed12mw/master.m3u8?u=public&p=efa1f375d76194fa51a3556a97e641e61685f914d446979da50a551a4333ffd7
+#EXTINF:6 group-title="Olympic S1-2" tvg-id="olympics12_olympicfeed13mw" tvg-logo="" provider="Olympic S1-2" provider-logo="" provider-type="iptv",OLYMPIC FEED 13 MW 
+http://vnes01.duckdns.org:1234/stream/olympics12/olympicfeed13mw/master.m3u8?u=public&p=efa1f375d76194fa51a3556a97e641e61685f914d446979da50a551a4333ffd7
+#EXTINF:8 group-title="Olympic S2-2" tvg-id="olympics22_olympicfeed14mw" tvg-logo="" provider="Olympic S2-2" provider-logo="" provider-type="iptv",OLYMPIC FEED 14 MW
+http://vnes02.duckdns.org:1234/stream/olympics22/olympicfeed14mw/master.m3u8?u=public&p=efa1f375d76194fa51a3556a97e641e61685f914d446979da50a551a4333ffd7
+#EXTINF:7 group-title="Olympic S1-2" tvg-id="olympics12_olympicfeed15mw" tvg-logo="" provider="Olympic S1-2" provider-logo="" provider-type="iptv",OLYMPIC FEED 15 MW 
+http://vnes01.duckdns.org:1234/stream/olympics12/olympicfeed15mw/master.m3u8?u=public&p=efa1f375d76194fa51a3556a97e641e61685f914d446979da50a551a4333ffd7
+#EXTINF:9 group-title="Olympic S2-2" tvg-id="olympics22_olympicfeed16mw" tvg-logo="" provider="Olympic S2-2" provider-logo="" provider-type="iptv",OLYMPIC FEED 16 MW
+http://vnes02.duckdns.org:1234/stream/olympics22/olympicfeed16mw/master.m3u8?u=public&p=efa1f375d76194fa51a3556a97e641e61685f914d446979da50a551a4333ffd7
+#EXTINF:8 group-title="Olympic S1-2" tvg-id="olympics12_olympicfeed17mw" tvg-logo="" provider="Olympic S1-2" provider-logo="" provider-type="iptv",OLYMPIC FEED 17 MW
+http://vnes01.duckdns.org:1234/stream/olympics12/olympicfeed17mw/master.m3u8?u=public&p=efa1f375d76194fa51a3556a97e641e61685f914d446979da50a551a4333ffd7
+#EXTINF:10 group-title="Olympic S2-2" tvg-id="olympics22_olympicfeed18mw" tvg-logo="" provider="Olympic S2-2" provider-logo="" provider-type="iptv",OLYMPIC FEED 18 MW
+http://vnes02.duckdns.org:1234/stream/olympics22/olympicfeed18mw/master.m3u8?u=public&p=efa1f375d76194fa51a3556a97e641e61685f914d446979da50a551a4333ffd7
+#EXTINF:9 group-title="Olympic S1-2" tvg-id="olympics12_olympicfeed19mw" tvg-logo="" provider="Olympic S1-2" provider-logo="" provider-type="iptv",OLYMPIC FEED 19 MW
+http://vnes01.duckdns.org:1234/stream/olympics12/olympicfeed19mw/master.m3u8?u=public&p=efa1f375d76194fa51a3556a97e641e61685f914d446979da50a551a4333ffd7
