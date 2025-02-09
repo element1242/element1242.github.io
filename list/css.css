@@ -1,4 +1,7 @@
 @media screen and (max-width: 950px) {
+    html {
+        padding: 4%;
+    }
     #search {
       visibility: hidden;
       clear: both;
@@ -14,11 +17,11 @@
   }
 
   @media screen and (min-width: 950px) {
+    html {
+        padding: 4%;
+    }
     #formobile {
         display: none;
     }
   }
 
-html {
-    padding: 7vh;
-}
