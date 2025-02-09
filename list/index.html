@@ -1,0 +1,68 @@
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="css.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<style>
+    th{ 
+        color:#fff;
+            }
+
+/* single-row column design */
+tr { display: block; float: left; }
+th, td { display: block; }
+
+/* border-collapse */
+tr>*:not(:first-child) { border-top: 0; }
+tr:not(:first-child)>* { border-left:0; }
+</style>
+<body>
+<h2>tpv-alpha - DVB Search (beta)</h2>
+<div id="formobile">
+    <b>Website này không hỗ trợ xem Mobile. vui lòng chuyển qua máy tính hoặc pad. thanks!</b>
+</div>
+<div id="search">
+<div id="searchtable" class="mt-2">
+    <b>Chọn quốc gia:</b>
+<table class="table" style="table-layout: fixed;">
+
+    <tbody id="myTable">
+        
+    </tbody>
+</table>
+</div>
+</div>
+</body>
+
+<script>
+
+var myArray = []
+
+$.ajax({
+	method:'GET',
+	url:'getcountries.json',
+	success:function(response){
+		myArray = response.data
+		buildTable(myArray)
+		console.log('Thu thap du lieu quoc gia thanh cong')
+	}
+})
+
+
+function buildTable(data){
+	var table = document.getElementById('myTable')
+    table.innerHTML = ''
+    for (var i = 0; i < data.length; i++){
+		var row = `<tr>
+						<td><a href="list.html?country=${data[i].id}"><img src="${data[i].fl}" style="height:100px;"></a></td>
+						<td style="text-align:center;"><a href="list.html?country=${data[i].id}">${data[i].nm}</a></td>
+					</tr>`
+		table.innerHTML += row
+}
+}
+
+
+</script>
+
+
+</html>
