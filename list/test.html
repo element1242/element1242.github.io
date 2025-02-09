@@ -1,0 +1,130 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<style>
+    th{ 
+        color:#fff;
+            }
+</style>
+
+<input id="search-input-ch" type="text" class="form-control">
+<input id="search-input-date" type="text" class="form-control">
+
+<table class="table table-striped">
+    <tr  class="bg-info">
+        <th>Kênh</th>
+        <th>Chương trình</th>
+        <th>Ngày phát sóng</th>
+        <th>Thời gian bắt đầu</th>
+        <th>Dung lượng</th>
+        <th>V/A</th>
+        <th>HREF</th>
+    </tr>
+
+    <tbody id="myTable">
+        
+    </tbody>
+</table>
+
+<script>
+
+$('#search-input-ch').on('keyup',function(){
+    var value = $(this).val()
+    var data = searchtablech(value, myArray)
+	var table = document.getElementById('myTable')
+    table.innerHTML = ''
+    for (var i = 0; i < data.length; i++){
+		var row = `<tr>
+						<td>${data[i].ch}</td>
+						<td>${data[i].pg}</td>
+                        <td>${data[i].date}</td>
+                        <td>${data[i].ts}</td>
+                        <td>${data[i].fs} GB</td>
+                        <td>${data[i].vid}/${data[i].aud}</td>
+                        <td><a href=${data[i].url}>visit</a></td>
+					</tr>`
+		table.innerHTML += row
+}
+}
+)
+
+$('#search-input-date').on('keyup',function(){
+    var value = $(this).val()
+    var data = searchtabledt(value, myArray)
+	var table = document.getElementById('myTable')
+    table.innerHTML = ''
+    for (var i = 0; i < data.length; i++){
+		var row = `<tr>
+						<td>${data[i].ch}</td>
+						<td>${data[i].pg}</td>
+                        <td>${data[i].date}</td>
+                        <td>${data[i].ts}</td>
+                        <td>${data[i].fs} GB</td>
+                        <td>${data[i].vid}/${data[i].aud}</td>
+                        <td><a href=${data[i].url}>visit</a></td>
+					</tr>`
+		table.innerHTML += row
+}
+}
+)
+
+var myArray = []
+
+$.ajax({
+	method:'GET',
+	url:'vie.json',
+	success:function(response){
+		myArray = response.data
+		buildTable(myArray)
+	}
+})
+
+
+function searchtablech(value, data) {
+    var filData = []
+
+    for (var i = 0; i < data.length; i++) {
+        value = value.toLowerCase();
+        var ch = data [i].ch.toLowerCase();
+
+        if ( ch.includes(value) ) {
+            filData.push(data[i])
+        }
+}
+return filData
+}  
+
+function searchtabledt(value, data) {
+    var filData = []
+
+    for (var i = 0; i < data.length; i++) {
+        value = value.toLowerCase();
+        var dt = data [i].date.toLowerCase();
+
+        if ( dt.includes(value) ) {
+            filData.push(data[i])
+        }
+}
+return filData
+}  
+
+function buildTable(data){
+	var table = document.getElementById('myTable')
+    table.innerHTML = ''
+    for (var i = 0; i < data.length; i++){
+		var row = `<tr>
+						<td>${data[i].ch}</td>
+						<td>${data[i].pg}</td>
+                        <td>${data[i].date}</td>
+                        <td>${data[i].ts}</td>
+                        <td>${data[i].fs} GB</td>
+                        <td>${data[i].vid}/${data[i].aud}</td>
+                        <td><a href=${data[i].url}>visit</a></td>
+					</tr>`
+		table.innerHTML += row
+}
+}
+
+
+</script>
