@@ -19,13 +19,13 @@
 <div id="searchtable" class="mt-2">
 <table class="table table-striped" style="table-layout: fixed;">
     <tr  class="bg-info">
-        <th style="width:12%">Kênh</th>
-        <th style="width:46%">Chương trình</th>
-        <th style="width:10%">Ngày phát sóng</th>
-        <th style="width:10%">Thời gian bắt đầu</th>
-        <th style="width:10%">Dung lượng</th>
-        <th style="width:6%">V/A</th>
-        <th style="width:6%">HREF</th>
+        <th style="width:11%">Kênh</th>
+        <th style="width:37%">Chương trình</th>
+        <th style="width:12%">Ngày phát</th>
+        <th style="width:13%">Thời gian bắt đầu</th>
+        <th style="width:13%">Dung lượng</th>
+        <th style="width:7%">V/A</th>
+        <th style="width:7cqi">HREF</th>
     </tr>
 
     <tbody id="myTable">
@@ -85,16 +85,29 @@ function search() {
         }
     }
 }
-if ( sv.toLowerCase() == "ru" ) {
+if ( sv.toLowerCase() == "rus" ) {
 var myArray = []
 
 $.ajax({
 	method:'GET',
-	url:'array.json',
+	url:'getcontent-rus.json',
 	success:function(response){
 		myArray = response.data
 		buildTable(myArray)
-		console.log('Thu thap du lieu quoc gia RU thanh cong')
+		console.log('Thu thap du lieu quoc gia RUS thanh cong')
+	}
+})
+}
+	else if ( sv.toLowerCase() == "vie" ) {
+var myArray = []
+
+$.ajax({
+	method:'GET',
+	url:'getcontent-vie.json',
+	success:function(response){
+		myArray = response.data
+		buildTable(myArray)
+		console.log('Thu thap du lieu quoc gia VIE thanh cong')
 	}
 })
 }
