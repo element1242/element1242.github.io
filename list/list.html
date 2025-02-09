@@ -20,10 +20,10 @@
 <table class="table table-striped" style="table-layout: fixed;">
     <tr  class="bg-info">
         <th style="width:12%">Kênh</th>
-        <th style="width:50%">Chương trình</th>
+        <th style="width:46%">Chương trình</th>
         <th style="width:10%">Ngày phát sóng</th>
-        <th style="width:8%">Thời gian bắt đầu</th>
-        <th style="width:8%">Dung lượng</th>
+        <th style="width:10%">Thời gian bắt đầu</th>
+        <th style="width:10%">Dung lượng</th>
         <th style="width:6%">V/A</th>
         <th style="width:6%">HREF</th>
     </tr>
@@ -85,45 +85,18 @@ function search() {
         }
     }
 }
-if ( sv.toLowerCase() == "rus" ) {
+if ( sv.toLowerCase() == "ru" ) {
 var myArray = []
 
 $.ajax({
 	method:'GET',
-	url:'getcountry-rus.json',
+	url:'array.json',
 	success:function(response){
 		myArray = response.data
 		buildTable(myArray)
-		console.log('Thu thap du lieu quoc gia RUS thanh cong')
+		console.log('Thu thap du lieu quoc gia RU thanh cong')
 	}
 })
-}
-else if ( sv.toLowerCase() == "vie" ) {
-var myArray = []
-
-$.ajax({
-	method:'GET',
-	url:'getcountry-vie.json',
-	success:function(response){
-		myArray = response.data
-		buildTable(myArray)
-		console.log('Thu thap du lieu quoc gia VIE thanh cong')
-	}
-})
-}
-else {
-var myArray = []
-
-//$.ajax({
-//	method:'GET',
-//	url:'array.json',
-//	success:function(response){
-//		myArray = response.data
-//		buildTable(myArray)
-//		console.log('Thu thap du lieu quoc gia RU thanh cong')
-//	}
-//})
-console.log('Quoc gia nay chua co trong database')
 }
 
 function searchtablech(value, data) {
