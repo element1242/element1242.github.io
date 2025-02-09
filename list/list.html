@@ -1,0 +1,178 @@
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="css.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<style>
+    th{ 
+        color:#fff;
+            }
+</style>
+<body>
+<h2>tpv-alpha - DVB Search</h2>
+<div id="formobile">
+    <b>Website này không hỗ trợ xem Mobile. vui lòng chuyển qua máy tính hoặc pad. thanks!</b>
+</div>
+<div id="search">
+<input id="search-input-ch" placeholder="Tìm theo tên kênh" onkeyup="search()" type="text" class="form-control">
+<input id="search-input-date" placeholder="Tìm theo ngày phát (cú pháp dd/mm/yyyy)" onkeyup="search()" type="text" class="form-control">
+<div id="searchtable" class="mt-2">
+<table class="table table-striped" style="table-layout: fixed;">
+    <tr  class="bg-info">
+        <th style="width:12%">Kênh</th>
+        <th style="width:50%">Chương trình</th>
+        <th style="width:10%">Ngày phát sóng</th>
+        <th style="width:8%">Thời gian bắt đầu</th>
+        <th style="width:8%">Dung lượng</th>
+        <th style="width:6%">V/A</th>
+        <th style="width:6%">HREF</th>
+    </tr>
+
+    <tbody id="myTable">
+        
+    </tbody>
+</table>
+</div>
+</div>
+</body>
+
+<script>
+
+
+function getParam ( country )
+{
+  var params = location.search.substr(location.search.indexOf("?")+1)
+  var sval =  params.replace("country=", "")
+  return sval
+}
+var sv = getParam("sv")
+console.log("Quoc gia:",sv)
+
+
+function search() {
+    var inputch,
+        inputdt,
+        filterch,
+        filterdt,
+        table,
+        tr,
+        td,
+        i,
+        ch,
+        date;
+    inputch = document.getElementById("search-input-ch");
+    inputdt = document.getElementById("search-input-date");
+
+    filterch = inputch.value.toUpperCase();
+    filterdt = inputdt.value.toUpperCase();
+
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        td1 = tr[i].getElementsByTagName("td")[2];
+        if (td && td1) {
+            ch = (td.textContent || td.innerText).toUpperCase();
+            date = (td1.textContent || td1.innerText).toUpperCase();
+            if (
+                ch.indexOf(filterch) > -1 &&
+                date.indexOf(filterdt) > -1
+            ) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+}
+if ( sv.toLowerCase() == "rus" ) {
+var myArray = []
+
+$.ajax({
+	method:'GET',
+	url:'getcountry-rus.json',
+	success:function(response){
+		myArray = response.data
+		buildTable(myArray)
+		console.log('Thu thap du lieu quoc gia RUS thanh cong')
+	}
+})
+}
+else if ( sv.toLowerCase() == "vie" ) {
+var myArray = []
+
+$.ajax({
+	method:'GET',
+	url:'getcountry-vie.json',
+	success:function(response){
+		myArray = response.data
+		buildTable(myArray)
+		console.log('Thu thap du lieu quoc gia VIE thanh cong')
+	}
+})
+}
+else {
+var myArray = []
+
+//$.ajax({
+//	method:'GET',
+//	url:'array.json',
+//	success:function(response){
+//		myArray = response.data
+//		buildTable(myArray)
+//		console.log('Thu thap du lieu quoc gia RU thanh cong')
+//	}
+//})
+console.log('Quoc gia nay chua co trong database')
+}
+
+function searchtablech(value, data) {
+    var filData = []
+
+    for (var i = 0; i < data.length; i++) {
+        value = value.toLowerCase();
+        var ch = data [i].ch.toLowerCase();
+
+        if ( ch.includes(value) ) {
+            filData.push(data[i])
+        }
+}
+return filData
+}  
+
+function searchtabledt(value, data) {
+    var filData = []
+
+    for (var i = 0; i < data.length; i++) {
+        value = value.toLowerCase();
+        var dt = data [i].date.toLowerCase();
+
+        if ( dt.includes(value) ) {
+            filData.push(data[i])
+        }
+}
+return filData
+}  
+
+function buildTable(data){
+	var table = document.getElementById('myTable')
+    table.innerHTML = ''
+    for (var i = 0; i < data.length; i++){
+		var row = `<tr>
+						<td>${data[i].ch}</td>
+						<td>${data[i].pg}</td>
+                        <td>${data[i].date}</td>
+                        <td>${data[i].ts}</td>
+                        <td>${data[i].fs} GB</td>
+                        <td>${data[i].vid}/${data[i].aud}</td>
+                        <td><a href=${data[i].url}>visit</a></td>
+					</tr>`
+		table.innerHTML += row
+}
+}
+
+
+</script>
+
+
+</html>
