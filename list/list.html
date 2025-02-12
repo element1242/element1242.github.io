@@ -1,36 +1,55 @@
-<html>
+<html >
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <link rel="stylesheet" href="css.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+<link rel="stylesheet" href="https://cdn.datatables.net/2.2.2/css/dataTables.dataTables.css" />
+  
+<script src="https://cdn.datatables.net/2.2.2/js/dataTables.js"></script>
 <style>
-    th{ 
-        color:#fff;
-            }
+
 </style>
-<body>
+<body style="color: #000000;">
 <h2>tpv-alpha - DVB Search</h2>
 <div id="formobile">
     <b>Website này không hỗ trợ xem Mobile. vui lòng chuyển qua máy tính hoặc pad. thanks!</b>
 </div>
+<!--muc nay bi bo
+
 <div id="search">
 <input id="search-input-ch" placeholder="Tìm theo tên kênh" onkeyup="search()" type="text" class="form-control">
 <input id="search-input-date" placeholder="Tìm theo ngày phát (cú pháp dd/mm/yyyy)" onkeyup="search()" type="text" class="form-control">
+
+
+-->
 <div id="searchtable" class="mt-2">
-<table class="table table-striped" style="table-layout: fixed;">
-    <tr  class="bg-info">
-        <th style="width:11%">Kênh</th>
-        <th style="width:37%">Chương trình</th>
-        <th style="width:12%">Ngày phát</th>
-        <th style="width:13%">Thời gian bắt đầu</th>
-        <th style="width:13%">Dung lượng</th>
-        <th style="width:7%">V/A</th>
-        <th style="width:7cqi">HREF</th>
+<table id="example" class="display">
+    <thead  class="bg-info">
+        <tr>
+        <th scope="col">Uploader</th>
+        <th scope="col">Kênh</th>
+        <th scope="col">Chương trình</th>
+        <th scope="col">Ngày phát</th>
+        <th scope="col">Thời gian</th>
+        <th scope="col">Dung lượng</th>
+        <th scope="col">Status</th>
     </tr>
+    
+    </thead>
 
     <tbody id="myTable">
         
     </tbody>
+    <tfoot>
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </tfoot>
 </table>
 </div>
 </div>
@@ -49,113 +68,114 @@ var sv = getParam("sv")
 console.log("Quoc gia:",sv)
 
 
-function search() {
-    var inputch,
-        inputdt,
-        filterch,
-        filterdt,
-        table,
-        tr,
-        td,
-        i,
-        ch,
-        date;
-    inputch = document.getElementById("search-input-ch");
-    inputdt = document.getElementById("search-input-date");
+    let tableid = $('#example').DataTable({
+        lengthMenu: [
+        [5, 10, 25, 50, -1],
+        [5, 10, 25, 50, 'tất cả']
+    ],
+        "pageLength": 10,
+//"dom": '<lr><t><ip>',
+    layout: {
+    topStart: 'pageLength',
+    topEnd: null,
+    bottomStart: 'info',
+    bottomEnd: 'paging'
 
-    filterch = inputch.value.toUpperCase();
-    filterdt = inputdt.value.toUpperCase();
+    },
+ajax: {
+    url : 'getcontent-' + sv.toLowerCase() + '.json',
+    dataSrc : 'data'
+},
 
-    table = document.getElementById("myTable");
-    tr = table.getElementsByTagName("tr");
-    for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[0];
-        td1 = tr[i].getElementsByTagName("td")[2];
-        if (td && td1) {
-            ch = (td.textContent || td.innerText).toUpperCase();
-            date = (td1.textContent || td1.innerText).toUpperCase();
-            if (
-                ch.indexOf(filterch) > -1 &&
-                date.indexOf(filterdt) > -1
-            ) {
-                tr[i].style.display = "";
-            } else {
-                tr[i].style.display = "none";
-            }
-        }
+columns: [
+    {data: 'up'},
+    {data: 'ch'},
+    {data: 'pg'},
+    {data: 'date'},
+    {data: 'ts'},
+    {data: 'fs'},
+    {data: 'vid'}
+
+],
+
+columnDefs: [
+        {
+            // The `data` parameter refers to the data for the cell (defined by the
+            // `data` option, which defaults to the column being worked with, in
+            // this case `data: 0`.
+            render: (data, type, full) => data + ' ' + full['ts'],
+            targets: 3
+        },
+
+        {
+            // The `data` parameter refers to the data for the cell (defined by the
+            // `data` option, which defaults to the column being worked with, in
+            // this case `data: 0`.
+            render: (data, type, full) => data + ' GB',
+            targets: 5
+        },
+        { visible: false, targets: [4] },
+        { width: '12%', targets: 0 },
+        { width: '11%', targets: 1 },
+        { width: '35%', targets: 2 },
+        { width: '12%', targets: 3 },
+        { width: '12%', targets: 4 },
+        { width: '10%', targets: 5 },
+        { width: '8%', targets: 6 }
+        
+
+    ],
+
+    order: [[3, 'desc']],
+    initComplete: function () {
+        this.api().columns().every(function () {
+                let column = this;
+                let title = column.footer().textContent;
+ 
+                // Create input element
+                let input = document.createElement('input');
+                input.placeholder = title;
+                column.footer().replaceChildren(input);
+ 
+                // Event listener for user input
+                input.addEventListener('keyup', () => {
+                    if (column.search() !== this.value) {
+                        column.search(input.value).draw();
+                    }
+                });
+            });
+            //var r = $('#example tfoot tr');
+  //r.find('th').each(function(){
+    //$(this).css('padding', 6);
+  //});
+  //$('#example tbody').append(r);
+        },
+        language: {
+    "decimal":        "",
+    "emptyTable":     "Quốc gia này không tồn tại.",
+    "info":           "Đang hiển thị từ  _START_ đến _END_ trong số _TOTAL_ mục",
+    "infoEmpty":      "Đang hiển thị từ 0 đến 0 trong số 0 mục",
+    "infoFiltered":   "(lọc từ _MAX_ mục tổng)",
+    "infoPostFix":    "",
+    "thousands":      ",",
+    "lengthMenu":     "Hiển thị _MENU_ mục",
+    "loadingRecords": "Đang tải...",
+    "processing":     "",
+    "search":         "Tìm kiếm:",
+    "zeroRecords":    "Không tìm thấy.",
+    "paginate": {
+        "first":      "Trang đầu",
+        "last":       "Trang cuối",
+        "next":       "Kế tiếp",
+        "previous":   "Trước đó"
+    },
+    "aria": {
+        "orderable":  "Order by this column",
+    
     }
 }
-if ( sv.toLowerCase() == "rus" ) {
-var myArray = []
-
-$.ajax({
-	method:'GET',
-	url:'getcontent-rus.json',
-	success:function(response){
-		myArray = response.data
-		buildTable(myArray)
-		console.log('Thu thap du lieu quoc gia RUS thanh cong')
-	}
 })
-}
-	else if ( sv.toLowerCase() == "vie" ) {
-var myArray = []
 
-$.ajax({
-	method:'GET',
-	url:'getcontent-vie.json',
-	success:function(response){
-		myArray = response.data
-		buildTable(myArray)
-		console.log('Thu thap du lieu quoc gia VIE thanh cong')
-	}
-})
-}
-
-function searchtablech(value, data) {
-    var filData = []
-
-    for (var i = 0; i < data.length; i++) {
-        value = value.toLowerCase();
-        var ch = data [i].ch.toLowerCase();
-
-        if ( ch.includes(value) ) {
-            filData.push(data[i])
-        }
-}
-return filData
-}  
-
-function searchtabledt(value, data) {
-    var filData = []
-
-    for (var i = 0; i < data.length; i++) {
-        value = value.toLowerCase();
-        var dt = data [i].date.toLowerCase();
-
-        if ( dt.includes(value) ) {
-            filData.push(data[i])
-        }
-}
-return filData
-}  
-
-function buildTable(data){
-	var table = document.getElementById('myTable')
-    table.innerHTML = ''
-    for (var i = 0; i < data.length; i++){
-		var row = `<tr>
-						<td>${data[i].ch}</td>
-						<td>${data[i].pg}</td>
-                        <td>${data[i].date}</td>
-                        <td>${data[i].ts}</td>
-                        <td>${data[i].fs} GB</td>
-                        <td>${data[i].vid}/${data[i].aud}</td>
-                        <td><a href=${data[i].url}>visit</a></td>
-					</tr>`
-		table.innerHTML += row
-}
-}
 
 
 </script>
