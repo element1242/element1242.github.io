@@ -27,9 +27,9 @@
   }
 
 tfoot { 
-  display: table-header-group;
+  display: table-header-group !important;
 }
 thead {
-  display: table-row-group;
+  display: table-row-group !important;
 }
 .dataTables_filter, .dataTables_info { display: none; }
