@@ -1,13 +1,11 @@
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 899px) {
     html {
         padding: 4%;
     }
-    #search {
+    #searchtable {
       visibility: hidden;
       clear: both;
       float: left;
-      margin: 10px auto 5px 20px;
-      width: 28%;
       display: none;
     }
 
@@ -16,12 +14,22 @@
     }
   }
 
-  @media screen and (min-width: 950px) {
+  @media screen and (min-width: 900px) {
     html {
         padding: 4%;
     }
     #formobile {
+      visibility: hidden;
+      clear: both;
+      float: left;
         display: none;
     }
   }
 
+tfoot { 
+  display: table-header-group;
+}
+thead {
+  display: table-row-group;
+}
+.dataTables_filter, .dataTables_info { display: none; }
