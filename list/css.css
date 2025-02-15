@@ -1,6 +1,6 @@
 @media screen and (max-width: 899px) {
     html {
-        padding: 4%;
+        padding: 2.5%;
     }
     #searchtable {
       visibility: hidden;
@@ -16,7 +16,7 @@
 
   @media screen and (min-width: 900px) {
     html {
-        padding: 4%;
+        padding: 2.5%;
     }
     #formobile {
       visibility: hidden;
@@ -27,9 +27,22 @@
   }
 
 tfoot { 
-  display: table-header-group !important;
+  display: table-header-group;
 }
 thead {
-  display: table-row-group !important;
+  display: table-row-group;
 }
 .dataTables_filter, .dataTables_info { display: none; }
+html {
+  font-size: 12px;
+}
+table.dataTable {
+  font-size: 12px;
+}
+.table1 td, .table1 th {
+  padding: .5rem;
+
+}
+.table1 {
+  margin-bottom: 10px;
+}
