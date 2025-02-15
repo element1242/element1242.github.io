@@ -22,14 +22,14 @@
 
 -->
 <div id="searchtable" class="mt-2">
-<table id="example" class="display">
+<table id="example" class="display"  style="width:100%">
     <thead  class="bg-info">
         <tr>
         <th scope="col">Uploader</th>
         <th scope="col">Kênh</th>
         <th scope="col">Chương trình</th>
-        <th scope="col">Ngày phát</th>
-        <th scope="col">Thời gian</th>
+        <th scope="col">Thời lượng</th>
+        <th scope="col"></th>
         <th scope="col">Dung lượng</th>
         <th scope="col">Status</th>
     </tr>
@@ -69,6 +69,7 @@ console.log("Quoc gia:",sv)
 
 
     let tableid = $('#example').DataTable({
+ 
         lengthMenu: [
         [5, 10, 25, 50, -1],
         [5, 10, 25, 50, 'tất cả']
@@ -87,6 +88,7 @@ ajax: {
     dataSrc : 'data'
 },
 
+
 columns: [
     {data: 'up'},
     {data: 'ch'},
@@ -103,10 +105,16 @@ columnDefs: [
             // The `data` parameter refers to the data for the cell (defined by the
             // `data` option, which defaults to the column being worked with, in
             // this case `data: 0`.
-            render: (data, type, full) => data + ' ' + full['ts'],
+            render: (data, type, full) => '<a href=info.html?id=' + full['id'] + '>' + data,
+            targets: 2
+        },
+        {
+            // The `data` parameter refers to the data for the cell (defined by the
+            // `data` option, which defaults to the column being worked with, in
+            // this case `data: 0`.
+            render: (data, type, full) => data + ' ' + full['ts'] + '-' + full['te'],
             targets: 3
         },
-
         {
             // The `data` parameter refers to the data for the cell (defined by the
             // `data` option, which defaults to the column being worked with, in
@@ -122,9 +130,12 @@ columnDefs: [
         { width: '12%', targets: 4 },
         { width: '10%', targets: 5 },
         { width: '8%', targets: 6 }
-        
-
     ],
+    //fixedColumns: true,
+    //paging: false,
+    //scrollCollapse: true,
+    //scrollX: true,
+    //scrollY: 300,
 
     order: [[3, 'desc']],
     initComplete: function () {
