@@ -1,34 +1,17 @@
 {
-    "data": {
-        "p1":"https://res.cloudinary.com/dkdtlpy9m/image/upload/v1697040522/samples/cup-on-a-table.jpg",
-        "p2":"https://res.cloudinary.com/dkdtlpy9m/image/upload/v1697040522/samples/cup-on-a-table.jpg",
-        "p3":"https://res.cloudinary.com/dkdtlpy9m/image/upload/v1697040522/samples/cup-on-a-table.jpg",
-        "p4":"https://res.cloudinary.com/dkdtlpy9m/image/upload/v1697040522/samples/cup-on-a-table.jpg", 
-        "id":"F0281-2145",
-        "up":"tpv-alpha",
-        "ch":"1tv / Pervyy Kanal / ABC XYZ",
-        "pg":"News", 
-        "date":"18/09/2019",
-        "ts":"15:21",
-        "te":"15:22",
-        "fs":1.51,
-        "vid":"ok",
-        "detail":"local-1234.pdf"
-    },
-    "123f4": {
-        "p1":"https://res.cloudinary.com/dkdtlpy9m/image/upload/v1697040522/samples/cup-on-a-table.jpg",
-        "p2":"https://res.cloudinary.com/dkdtlpy9m/image/upload/v1697040522/samples/cup-on-a-table.jpg",
-        "p3":"https://res.cloudinary.com/dkdtlpy9m/image/upload/v1697040522/samples/cup-on-a-table.jpg",
-        "p4":"https://res.cloudinary.com/dkdtlpy9m/image/upload/v1697040522/samples/cup-on-a-table.jpg", 
-        "id":"F0281-2145",
-        "up":"tpv-alpha",
-        "ch":"1tv / Pervyy Kanal / ABC XYZ",
-        "pg":"News", 
-        "date":"18/09/2019",
-        "ts":"15:21",
-        "te":"15:22",
-        "fs":1.51,
-        "vid":"ok",
-        "detail":"local-1234.pdf"
+    "FPDTM2202502150001": {
+        "p1":"https://res.cloudinary.com/dj7cz5paw/image/upload/c_scale,h_190/v1739630068/tpv-alpha-cdn-20250215/FPDTM2202502150001/outnlptnswlknkay5r1s.png",
+        "p2":"https://res.cloudinary.com/dj7cz5paw/image/upload/c_scale,h_190/v1739630068/tpv-alpha-cdn-20250215/FPDTM2202502150001/hzxleobtm03tzt2c95wj.png",
+        "p3":"https://res.cloudinary.com/dj7cz5paw/image/upload/c_scale,h_190/v1739630068/tpv-alpha-cdn-20250215/FPDTM2202502150001/mqlrw94u03lzhdl8u1cy.png",
+        "p4":"https://res.cloudinary.com/dj7cz5paw/image/upload/c_scale,h_190/v1739630068/tpv-alpha-cdn-20250215/FPDTM2202502150001/yqldyvf52nzpy2nvefuh.png", 
+      "id":"FPDTM2202502150001",
+      "up":"tpv-alpha",
+      "ch":"VTV1",
+      "pg":"Thời sự", 
+      "date":"20/01/2023",
+      "ts":"18:59",
+      "te":"19:49",
+      "fs":2.74,
+      "vid":"ok"
     }
 }
