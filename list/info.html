@@ -1,0 +1,108 @@
+<html >
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="css.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.datatables.net/2.2.2/css/dataTables.dataTables.css" />
+  
+<script src="https://cdn.datatables.net/2.2.2/js/dataTables.js"></script>
+<style>
+.table td, .table th {
+    border-top: none!important;
+}
+.tableinfo td, .tableinfo th{
+    padding: .25rem!important;
+}
+</style>
+<body style="color: #000000;">
+<h2><a href="index.html">[back]</a> tpv-alpha - viewer</h2>
+<div id="formobile">
+    <b>Website này không hỗ trợ xem Mobile. vui lòng chuyển qua máy tính hoặc pad. thanks!</b>
+</div>
+<!--muc nay bi bo
+
+<div id="search">
+<input id="search-input-ch" placeholder="Tìm theo tên kênh" onkeyup="search()" type="text" class="form-control">
+<input id="search-input-date" placeholder="Tìm theo ngày phát (cú pháp dd/mm/yyyy)" onkeyup="search()" type="text" class="form-control">
+
+
+-->
+<div id="detail">
+
+</div>
+<div id="searchtable" class="mt-2">
+    <table class="table1" style="table-layout: fixed;">
+
+        <tbody id="myTable">
+            
+        </tbody>
+    </table>
+
+    <table class="table tableinfo" style="table-layout: fixed;">
+        <tbody id="tableinfo">
+
+        </tbody>
+    </table>
+    
+</div>
+</div>
+</body>
+
+<script>
+
+
+
+var myArray = []
+function getParam ( id )
+{
+  var params = location.search.substr(location.search.indexOf("?")+1)
+  var sval =  params.replace("id=", "")
+  return sval
+}
+var sv = getParam("sv")
+console.log("Quoc gia:",sv)
+var http_request = new XMLHttpRequest();
+var data_file = "getdetail.json";
+http_request.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+		myArray = JSON.parse(http_request.responseText)
+        console.log(myArray)
+		console.log('Thu thap detail id ' + sv + ' thanh cong')
+        console.log(myArray[sv]["id"])
+        var table = document.getElementById('myTable')
+        table.innerHTML = ''
+		var row = "<tr>"
+                 + '<td><img src="' + myArray[sv]["p1"] + '" style="height:190px;"></td>'
+                 + '<td><img src="' + myArray[sv]["p2"] + '" style="height:190px;"></td>'
+                 + "</tr><tr>"
+                 + '<td><img src="' + myArray[sv]["p3"] + '" style="height:190px;"></td>'
+                 + '<td><img src="' + myArray[sv]["p4"] + '" style="height:190px;"></td>'
+                 + "</tr>"
+		table.innerHTML += row
+        var table2 = document.getElementById('tableinfo')
+        table2.innerHTML = ''
+		var row2 = "<tr>"
+                 + '<h3>[' + myArray[sv]["up"] + '] ' + myArray[sv]["ch"] + ' - ' + myArray[sv]["pg"] + ' - ' + myArray[sv]["date"] + ' (' + myArray[sv]["ts"] + '-' + myArray[sv]["te"]+ ')</h3>'
+                 + "</tr><tr>"
+                 + '<td><a href="' + myArray[sv]["detail"] + '"><img src="https://www.science.co.il/internet/browsers/PDF-doc-256.png" style="height:25px;"> Click to get detailed report</a></td>'
+                 + "</tr>"
+		table2.innerHTML += row2
+	}
+    else if (this.status == 200) {
+        var table = document.getElementById('myTable')
+        table.innerHTML = ''
+		var row = "<tr>"
+                 + '<td><h4>Content not available</h4></td>'
+                 + "</tr>"
+		table.innerHTML += row
+    }
+}
+http_request.open("GET", data_file, true);
+http_request.send();
+
+
+
+
+</script>
+
+
+</html>
