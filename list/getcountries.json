@@ -6,7 +6,13 @@
         "nm":"Vietnam",
         "fl":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Vietnam.svg/800px-Flag_of_Vietnam.svg.png"
       },
-      
+
+      {
+        "id":"fra",
+        "nm":"France",
+        "fl":"https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/800px-Flag_of_France.svg.png"
+      },
+
       {
         "id":"rus",
         "nm":"Russia",
