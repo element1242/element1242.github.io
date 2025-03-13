@@ -14,5 +14,39 @@
         "fs":2.74,
         "vid":"ok",
         "detail":"https://res.cloudinary.com/dj7cz5paw/image/upload/v1739630565/tpv-alpha-cdn-20250215/FPDTM2202502150001/evxclrdcvcduqiho8qq2.pdf"
+    },
+
+        "FPDTM100WAHL250001": {
+        "p1":"https://res.cloudinary.com/dj7cz5paw/image/upload/c_scale,h_190/v1741008547/tpv-alpha-cdn-00WAHL25/FPDTM100WAHL250001/jypnqkna2abu2y8dmlhz.png",
+        "p2":"https://res.cloudinary.com/dj7cz5paw/image/upload/c_scale,h_190/v1741008547/tpv-alpha-cdn-00WAHL25/FPDTM100WAHL250001/detr0w4ddpm6la55lmb1.png",
+        "p3":"https://res.cloudinary.com/dj7cz5paw/image/upload/c_scale,h_190/v1741008547/tpv-alpha-cdn-00WAHL25/FPDTM100WAHL250001/ccqxkem1yil0t25yionc.png",
+        "p4":"https://res.cloudinary.com/dj7cz5paw/image/c_scale,h_190/upload/v1741008547/tpv-alpha-cdn-00WAHL25/FPDTM100WAHL250001/dno3hv7ktvafo6kscr4e.png", 
+        "id":"FPDTM100WAHL250001",
+        "up":"tpv-alpha",
+        "ch":"MDR Thüringen",
+        "pg":"MDR aktuell extra", 
+        "date":"24/02/2025",
+        "ts":"01:29",
+        "te":"01:57",
+        "fs":1.75,
+        "vid":"ok",
+        "detail":"https://res.cloudinary.com/dj7cz5paw/image/upload/v1741010292/tpv-alpha-cdn-00WAHL25/FPDTM100WAHL250001/efmkcxtjiyqrbid23dis.pdf"
+    },
+
+        "FPDTM2202502150002": {
+        "p1":"https://res.cloudinary.com/dj7cz5paw/image/upload/c_scale,h_190/v1741011559/tpv-alpha-cdn-00WAHL25/FPDTM100WAHL250002/im7bcaur4xttza9y9ayb.png",
+        "p2":"https://res.cloudinary.com/dj7cz5paw/image/upload/c_scale,h_190/v1741011559/tpv-alpha-cdn-00WAHL25/FPDTM100WAHL250002/hl65rasdnbnbg1hfxbqi.png",
+        "p3":"https://res.cloudinary.com/dj7cz5paw/image/upload/c_scale,h_190/v1741011560/tpv-alpha-cdn-00WAHL25/FPDTM100WAHL250002/klugqz5ej2r3hl3cwkui.png",
+        "p4":"https://res.cloudinary.com/dj7cz5paw/image/upload/c_scale,h_190/v1741011560/tpv-alpha-cdn-00WAHL25/FPDTM100WAHL250002/jkigggqb63ityzamyekl.png", 
+        "id":"FPDTM100WAHL250002",
+        "up":"tpv-alpha",
+        "ch":"MDR Thüringen",
+        "pg":"MDR aktuell extra (cont-notfull)", 
+        "date":"24/02/2025",
+        "ts":"01:57",
+        "te":"unknown",
+        "fs":0.89,
+        "vid":"ok",
+        "detail":"https://res.cloudinary.com/dj7cz5paw/image/upload/c_scale,h_190/v1741011532/tpv-alpha-cdn-00WAHL25/FPDTM100WAHL250002/sjulobvt5y4ug1bgllgu.pdf"
     }
 }
