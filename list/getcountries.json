@@ -14,6 +14,12 @@
       },
 
       {
+        "id":"ger",
+        "nm":"Germany",
+        "fl":"https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/800px-Flag_of_Germany.svg.png"
+      },
+
+      {
         "id":"rus",
         "nm":"Russia",
         "fl":"https://upload.wikimedia.org/wikipedia/en/thumb/f/f3/Flag_of_Russia.svg/800px-Flag_of_Russia.svg.png"
