@@ -1,0 +1,28 @@
+{
+  "data": [
+
+    {
+      "id":"FPDTM100WAHL250001",
+      "up":"tpv-alpha",
+      "ch":"MDR Thüringen",
+      "pg":"MDR aktuell extra", 
+      "date":"24/02/2025",
+      "ts":"01:29",
+      "te":"01:57",
+      "fs":1.75,
+      "vid":"ok"
+    },
+
+    {
+      "id":"FPDTM100WAHL250002",
+      "up":"tpv-alpha",
+      "ch":"MDR Thüringen",
+      "pg":"MDR aktuell extra (cont-notfull)", 
+      "date":"24/02/2025",
+      "ts":"01:57",
+      "te":"unknown",
+      "fs":0.85,
+      "vid":"ok"
+    }
+  ]
+}
