@@ -1,49 +1,189 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
-</head>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://vjs.zencdn.net/8.16.1/video-js.css" rel="stylesheet" />
-  <link href="https://unpkg.com/@videojs/themes@1/dist/forest/index.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TPV-alpha</title>
+  <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+  <link rel="stylesheet" href="../assets/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<div id="info">
-<h1 style="color:red;">vnesech2's news page</h1>
-Liên hệ tại: <a href="https://facebook.com/alphabytpv" class="button">Facebook</a>    <a href="https://youtube.com/@alphabytpv" class="button">YouTube</a>
-<br>
-</div>
-<div id="news">
+  <button class="theme-toggle" id="themeToggle" aria-label="Chuyển đổi giao diện sáng/tối">
+    <span class="theme-icon" id="themeIcon">🌙</span>
+  </button>
+  <button class="lang-toggle" id="langToggle" aria-label="Chuyển đổi ngôn ngữ">VI</button>
+  <div class="main-layout">
+    <aside class="sidebar">
+      <div class="logo">
+        <span class="logo-large"><a href="/"><img src="../assets/logo-light.png" alt="logo" class="logo-image" width="100px" height="100px"></a></span>
+      </div>
+      <nav class="nav-menu">
+        <a href="/news/" class="nav-btn active" id="navNews">Bảng tin</a>
+        <a href="/navigation/" class="nav-btn" id="navNav">Trang điều hướng</a>
+        <a href="/registration/" class="nav-btn" id="navReg">Trang đăng ký</a>
+        <a href="/request/" class="nav-btn" id="navReq">Trang yêu cầu</a>
+        <a href="/guide/" class="nav-btn" id="navGuide">Hướng dẫn</a>
+      </nav>
+    </aside>
+    <section class="content">
+      <div style="display: flex; margin-top: 24px; align-items: center; margin-bottom: 24px;">
+<button onclick="window.history.back()" class="back-btn" aria-label="Quay lại" style="margin-right: 12px; background: var(--btn-bg); border: none; border-radius: 6px; padding: 4px 12px; cursor: pointer; color: var(--btn-icon);">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+    <path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</button>
+        <h1 style="margin: 0;" id="news-title">Tin tức mới nhất</h1>
+      </div>
+      <div id="news-list" class="news-list"></div>
+    </section>
+  </div>
+  <script src="../assets/script.js"></script>
+  <script>
+    // Language translations object
+    const translations = {
+      vi: {
+        // Page title
+        pageTitle: 'TPV-alpha | Tin tức',
+        
+        // Theme toggle
+        themeToggleLabel: 'Chuyển đổi giao diện sáng/tối',
+        
+        // Back button
+        backButtonLabel: 'Quay lại',
+        
+        // Main heading
+        mainHeading: 'Bảng tin',
+        
+        // No news message
+        noNewsMessage: 'Không có tin tức nào.',
+        
+        // Navigation buttons
+        navNews: 'Bảng tin',
+        navNav: 'Trang điều hướng',
+        navReg: 'Trang đăng ký',
+        navReq: 'Trang yêu cầu',
+        navGuide: 'Hướng dẫn'
+      },
+      en: {
+        // Page title
+        pageTitle: 'TPV-alpha | News',
+        
+        // Theme toggle
+        themeToggleLabel: 'Toggle light/dark theme',
+        
+        // Back button
+        backButtonLabel: 'Go back',
+        
+        // Main heading
+        mainHeading: 'Newspage',
+        
+        // No news message
+        noNewsMessage: 'No news available.',
+        
+        // Navigation buttons
+        navNews: 'Newspage',
+        navNav: 'Navigation page',
+        navReg: 'Registration page',
+        navReq: 'Request page',
+        navGuide: 'Guidelines'
+      }
+    };
 
-    <!-- TIN 3-->
-<h2>(21.7.2025) TPV-alpha - Chuyển tên miền. Domain switched.</h2>
-Tên miền mới của TPV-alpha là https://tpv.asakura.fi/ .<br><br>
-<br>
-  <!-- TIN 3-->
-<h2>(17.5.2025) TPV-alpha - Bảo trì. Under maintenance.</h2>
-Do một số vấn đề về kho lưu trữ điện tử (digital archive storage) cùng việc thử nghiệm website mới tại local, mọi thông tin sẽ không còn được cập nhật (kể cả phần DVB Search).<br><br>
-<br>
-<!-- TIN 3-->
-<h2>(18.12.2024) TPV-alpha - Chào mừng. Welcome.</h2>
-Project này đã được đổi tên thành TPV-alpha, kết hợp với kênh YouTube và trang Facebook mới.<br><br>
-<img src="/upload/18122024/banner-1.png" style="width:500px;"><br>
-  
+    // Language toggle functionality
+    const langToggle = document.getElementById('langToggle');
+    let isEnglish = localStorage.getItem('lang') === 'en';
 
-<!-- TIN 3-->
-<h2>(06.08.2024) Kho lưu trữ sắp hoàn thiện!!</h2>
-Kho vẫn đang sắp xếp lại file thành từng mục, nên có lẽ vẫn phải đợi một khoảng thời gian nữa mới có thể đem lên website.<br><br>
-<img src="/upload/06082024/img2.png" style="width:500px;"><br>
-  
-<!-- TIN 1-->
-<h2>(25.07.2024) Vô cùng thương tiếc đồng chí Nguyễn Phú Trọng -<br>Tổng Bí thư Ban Chấp hành Trung ương Đảng Cộng sản Việt Nam!</h2>
+    function saveLanguage(english) {
+      localStorage.setItem('lang', english ? 'en' : 'vi');
+    }
+    
+    function renderNews(data, english) {
+      const list = document.getElementById('news-list');
+      const t = translations[english ? 'en' : 'vi'];
+      
+      if (!Array.isArray(data) || data.length === 0) {
+        list.innerHTML = `
+          <div class="news-item no-news">
+            <p>${t.noNewsMessage}</p>
+          </div>
+        `;
+        setTimeout(() => {
+          document.querySelector('.news-item.no-news')?.classList.add('loaded');
+        }, 100);
+        return;
+      }
 
-<img src="https://cdnphoto.dantri.com.vn/Os5wXmxZRii3zO4Oc_4_u8Fb6hM=/thumb_w/1920/2024/07/25/z5665685152928dad5a4a70f91358520daac8ecebc2174-1721876369611.jpg?watermark=v1" style="width:500px;"><br>
-<!-- TIN 2-->
-<h2>(25.07.2024) Trực tiếp Olympic Paris 2024 - ngay bây giờ!</h2>
-<i>(Chỉ dành cho thành viên Sao Hoả.)</i> Đường link giải mã toàn bộ 17 feed của Olympic Paris 2024 (Mediacorp Singapore phát sóng) hiện đang được cập nhật!. 
-<br>Do vẫn đang trong giai đoạn thử nghiệm, nếu có vấn đề với đường link, xin hãy liên hệ qua Facebook. Xin cảm ơn! <br><br>
-<img src="/upload/25072024/vlcsnap-2024-07-25-12h13m31s021.png" style="width:500px;"><br>
-</div>
-</body><br>
-<hr width="100%" size="1" color="black">
-<i>Website cập nhật 25.07.2024</i>
+      list.innerHTML = data.map((news, idx) => `
+        <div class="news-item" id="news-item-${idx}">
+          ${news.image ? `<img class='news-img' src='${news.image}' alt='Ảnh tin tức'>` : ''}
+          <h2 class="news-title">${english ? (news['title-en'] || news.title) : news.title}</h2>
+          <div class="news-meta">${news.date ? `<span>${news.date}</span>` : ''}</div>
+          <div class="news-content">${english ? (news['content-en'] || news.content) : news.content}</div>
+        </div>
+      `).join('');
+      // Onload animation cho từng news-item
+      setTimeout(() => {
+        document.querySelectorAll('.news-item').forEach((item, i) => {
+          setTimeout(() => item.classList.add('loaded'), i * 180);
+        });
+      }, 300);
+    }
+
+    function updateLanguage() {
+      const lang = isEnglish ? 'en' : 'vi';
+      const t = translations[lang];
+      
+      // Update page title
+      document.title = t.pageTitle;
+      
+      // Update theme toggle aria-label
+      document.getElementById('themeToggle').setAttribute('aria-label', t.themeToggleLabel);
+      
+      // Update back button aria-label
+      document.querySelector('.back-btn').setAttribute('aria-label', t.backButtonLabel);
+      
+      // Update main heading
+      document.getElementById('news-title').textContent = t.mainHeading;
+      
+      // Update sidebar button text
+      document.getElementById('navNews').textContent = t.navNews;
+      document.getElementById('navNav').textContent = t.navNav;
+      document.getElementById('navReg').textContent = t.navReg;
+      document.getElementById('navReq').textContent = t.navReq;
+      document.getElementById('navGuide').textContent = t.navGuide;
+      
+      // Re-render news with new language
+      renderNews(newsData, isEnglish);
+    }
+
+    let newsData = [];
+
+    // Load news from JSON once
+    // Initial render (shows "No news available" before fetch completes)
+    renderNews(newsData, isEnglish);
+
+    fetch('../assets/news.json')
+      .then(res => res.json())
+      .then(data => {
+        newsData = data;
+        renderNews(newsData, isEnglish);
+      })
+      .catch(() => {
+        // If fetch fails, show "No news available"
+        renderNews([], isEnglish);
+      });
+
+    langToggle.addEventListener('click', () => {
+      isEnglish = !isEnglish;
+      langToggle.textContent = isEnglish ? 'EN' : 'VI';
+      saveLanguage(isEnglish);
+      updateLanguage();
+    });
+
+    // Set initial language state
+    langToggle.textContent = isEnglish ? 'EN' : 'VI';
+    updateLanguage();
+  </script>
+</body>
 </html>
