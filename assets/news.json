@@ -1,5 +1,13 @@
 [
   {
+    "title": "Tạm thời ngừng hoạt động địa chỉ SharePoint thứ nhất",
+    "title-en": "Temporary shutdown of the first SharePoint directory",
+    "date": "2025-11-28",
+    "content": "Các dịch vụ của TPV-alpha, bao gồm cả TPV-alpha Requests đang bị gián đoạn do Microsoft thực hiện chặn sử dụng dịch vụ Microsoft 365 của nhóm. Hiện tại, chúng tôi đang liên hệ với đội ngũ hỗ trợ Microsoft để khắc phục vấn đề và sẽ có thông tin cập nhật sau đó.",
+    "content-en": "Some services, including TPV-alpha Requests, is currently shutting down due to the block of Microsoft 365 usage. We are now contacting the support team to resolve issue and will publish an update afterwards.",
+    "image": ""
+  },
+  {
     "title": "Cập nhật về TPV-alpha Requests",
     "title-en": "Update on TPV-alpha Requests section",
     "date": "2025-10-30",
@@ -16,3 +24,4 @@
     "image": ""
   }
 ]
+
